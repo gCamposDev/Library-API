@@ -8,9 +8,15 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
-@Configuration
-public class DataBaseConfiguration {t
 
+//Classe responsável por fazer a conexão com o banco de dados
+/*A conexão normalmente já é feita pelo arquivo application, mas fica de exemplo
+e aprendizado para quando houver algum problema com a conexão.
+ */
+@Configuration
+public class DataBaseConfiguration {
+
+    //Resgatando os valores das propriedades do arquivo application.yaml
     @Value("${spring.datasource.url}")
     String url;
     @Value("${spring.datasource.username}")
@@ -33,7 +39,8 @@ public class DataBaseConfiguration {t
     }
     */
 
-
+    // -> Alternativa de conexão com o banco utilizando pool de conexões, feita de forma "manual".
+    // Com este componente ativo, o Spring ignora a configuração de conexão definida no application.yaml.
     @Bean
     public DataSource hikariDataSource(){
         HikariConfig config = new HikariConfig();
