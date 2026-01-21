@@ -28,7 +28,7 @@ public class AutorRepositoryTest {
 
     @Test
     public void atualizarTest(){
-        UUID id = UUID.fromString("860bf609-cf10-4ae3-ace0-5eb97870de10");
+        UUID id = UUID.fromString("44922b57-5fcc-4ab3-a68a-29b938c245a2");
 
         Optional<Autor> optionalAutor = autorRepository.findById(id);
 
@@ -53,14 +53,14 @@ public class AutorRepositoryTest {
 
     @Test
     public void deletePorIdTest(){
-        UUID id = UUID.fromString("860bf609-cf10-4ae3-ace0-5eb97870de10");
+        UUID id = UUID.fromString("44922b57-5fcc-4ab3-a68a-29b938c245a2");
         autorRepository.deleteById(id);
 
     }
 
     @Test
     public void deleteTest(){
-        UUID id = UUID.fromString("45b34030-7f34-4f87-a8ee-d24050517c02");
+        UUID id = UUID.fromString("44922b57-5fcc-4ab3-a68a-29b938c245a2");
         Autor autor = autorRepository.findById(id).get();
         autorRepository.delete(autor);
 
