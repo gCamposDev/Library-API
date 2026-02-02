@@ -1,9 +1,11 @@
 package io.github.gcamposdev.libraryapi.repository;
 
 import io.github.gcamposdev.libraryapi.model.Autor;
+import io.github.gcamposdev.libraryapi.model.GeneroLivro;
 import io.github.gcamposdev.libraryapi.model.Livro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -45,4 +47,14 @@ public interface LivroRepository extends JpaRepository<Livro, UUID> {
             order by l.genero
     """)
     List<String> listarGenerosAutoresBrasileiros();
+
+    //named parameters -> parametros nomeados
+    @Query("select l from Livro l where l.genero = :generoLivro")
+    List<Livro> findByGenero(@Param("generoLivro") GeneroLivro generoLivro);
+
+    //positional parameters
+    @Query("select l from Livro l where l.genero = ?1")
+    List<Livro> findByGeneroPositionalParam(GeneroLivro generoLivro);
+
+
 }

@@ -144,5 +144,17 @@ class LivroRepositoryTest {
         lista.forEach(System.out::println);
     }
 
+    @Test
+    public void listarPorGeneroQueryNamedParamTest(){
+        List<Livro> lista = livroRepository.findByGenero(GeneroLivro.MISTERIO);
+        lista.forEach(System.out::println);
+    }
+
+    @Test
+    public void listarPorGeneroQueryPositionalParamTest(){
+        List<Livro> lista = livroRepository.findByGeneroPositionalParam(GeneroLivro.MISTERIO);
+        lista.forEach(System.out::println);
+    }
+
 }
 
