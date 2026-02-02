@@ -156,5 +156,15 @@ class LivroRepositoryTest {
         lista.forEach(System.out::println);
     }
 
+    @Test
+    public void deletePorGeneroTest(){
+        livroRepository.deleteByGenero(GeneroLivro.FICCAO);
+    }
+
+    @Test
+    public void atualizarDataPublicacaoPorTitulo(){
+        livroRepository.updateDataPublicacaoByTitulo(LocalDate.of(2026,2,2), "UFO 3");
+    }
+
 }
 
