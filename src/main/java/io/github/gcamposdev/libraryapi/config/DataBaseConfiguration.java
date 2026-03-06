@@ -1,3 +1,4 @@
+
 package io.github.gcamposdev.libraryapi.config;
 
 import com.zaxxer.hikari.HikariConfig;
